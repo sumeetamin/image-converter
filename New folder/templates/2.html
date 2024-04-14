@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Transformer</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            color: #f0f0f0;
+            background-color: #121212;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7G4hJBUGxs4UJAdMxEUY7-CatgAGpnIUhtg&s"); /* Replace YOUR_IMAGE_URL_HERE with your image link */
+            background-size: contain;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        main {
+            flex: 1;
+            padding: 2rem 0;
+            background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent background for content */
+        }
+        .footer {
+            text-align: center;
+            padding: 2rem 0;
+            background-color: #202020;
+        }
+        .custom-form {
+            max-width: 500px;
+            margin: auto;
+            background-color: #333;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .custom-form input[type="file"],
+        .custom-form select,
+        .custom-form input[type="submit"] {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border: 1px solid #777;
+            background-color: #222;
+            color: #eee;
+            border-radius: 4px;
+        }
+        img.result-image {
+            max-width: 80%;
+            display: block;
+            margin: 2rem auto;
+            border-radius: 8px;
+        }
+        /* Added styles for nav text color */
+        nav.container-fluid a, nav.container-fluid strong {
+            color: #000; /* Change text color to black */
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Image Transformer</strong></li>
+        </ul>
+        <ul>
+            <li><a href="#terms">Terms and Conditions</a></li>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="/" role="button">Home</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <h2>Upload an Image to Apply an Effect</h2>
+                <form action="/" method="post" enctype="multipart/form-data" class="custom-form">
+                    <label for="image">Choose an image:</label>
+                    <input type="file" id="image" name="image" required><br><br>
+                    <label for="effect">Select an effect:</label>
+                    <select name="effect" id="effect">
+                        <option value="1">Detailed Sketch</option>
+                        <option value="2">Cartoonify</option>
+                        <option value="3">Pop Art</option>
+                        <option value="4">Pencil Sketch</option>
+                    </select><br><br>
+                    <input type="submit" value="Apply Effect">
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="container footer">
+        <small>
+            <a href="#terms">Terms and Conditions</a> • <a href="#privacy">Privacy Policy</a>
+        </small>
+    </footer>
+</body>
+</html>
